@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/cloudcamp-backend
+    destination: /var/www/html/index.php
 hooks:
   BeforeInstall:
     - location: codedeploy/apache_stop.sh
