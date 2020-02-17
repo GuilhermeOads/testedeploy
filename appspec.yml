@@ -1,22 +1,18 @@
 version: 0.0
 os: linux
 files:
-   - source: /
-     destination: /var/www/html/index.php
-permissions:
-   - object: /var/www/html/index.php
-     pattern: "**"
-     owner: apache
-     group: apache
-     mode: 755
-     type:
-       - file
+  - source: /
+    destination: /var/www/cloudcamp-backend
 hooks:
-   BeforeInstall:
-    - location: scripts/installapache.sh
+  BeforeInstall:
+    - location: codedeploy/apache_stop.sh
+      timeout: 300
       runas: root
-    - location: scripts/startapache.sh
+  AfterInstall:
+    - location: codedeploy/afterinstall.sh
+      timeout: 300
       runas: root
-   AfterInstall:
-    - location: scripts/restartapache.sh
+  ApplicationStart:
+    - location: codedeploy/apache_start.sh
+      timeout: 300
       runas: root
