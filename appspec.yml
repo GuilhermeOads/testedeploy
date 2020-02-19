@@ -8,10 +8,6 @@ hooks:
     - location: codedeploy/apache_stop.sh
       timeout: 300
       runas: root
-  AfterInstall:
-    - location: codedeploy/afterinstall.sh
-      timeout: 300
-      runas: root
   ApplicationStart:
     - location: codedeploy/apache_start.sh
       timeout: 300
