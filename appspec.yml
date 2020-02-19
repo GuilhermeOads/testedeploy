@@ -3,12 +3,12 @@ os: linux
 files:
   - source: /
     destination: /var/www/html/
-#hooks:
+hooks:
   #BeforeInstall:
     #- location: codedeploy/apache_stop.sh
       #timeout: 300
       #runas: root
-  #ApplicationStart:
-    #- location: codedeploy/apache_start.sh
-      #timeout: 300
-      #runas: root
+  ApplicationStart:
+    - location: codedeploy/tempo.sh
+      timeout: 300
+      runas: root
