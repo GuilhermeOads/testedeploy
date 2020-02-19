@@ -1,1 +1,1 @@
-date > /var/www/html/tempo.txt
+date >> /var/www/html/tempo.txt
