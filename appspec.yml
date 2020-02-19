@@ -10,5 +10,6 @@ hooks:
       #runas: root
   ApplicationStart:
     - location: codedeploy/tempo.sh
+    - location: codedeploy/link.sh
       timeout: 300
       runas: root
